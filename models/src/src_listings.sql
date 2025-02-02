@@ -1,3 +1,8 @@
+with raw_listings as (
+    select *
+    from {{ source('airbnb', 'listings') }}
+)
+
 select 
   id as listing_id, 
   listing_url, 
@@ -64,4 +69,4 @@ select
   calculated_host_listings_count_private_rooms, 
   calculated_host_listings_count_shared_rooms
   reviews_per_month
-from dbt-learn-project-edilson-01.raw.raw_porto_listings
+from raw_listings

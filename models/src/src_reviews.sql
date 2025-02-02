@@ -1,3 +1,7 @@
+with raw_reviews as (
+    select *
+    from {{ source('airbnb', 'reviews') }}
+)
 select 
   listing_id,
   id as review_id,
@@ -5,4 +9,4 @@ select
   reviewer_id,
   reviewer_name,
   comments as review_comments
-from dbt-learn-project-edilson-01.raw.raw_porto_reviews
+from raw_reviews

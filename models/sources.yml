@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: airbnb
+    schema: raw
+    tables:
+      - name: listings
+        identifier: raw_porto_listings
+        
+
+      - name: reviews
+        identifier: raw_porto_reviews
+
+            
+          
+        
