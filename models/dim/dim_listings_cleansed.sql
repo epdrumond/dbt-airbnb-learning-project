@@ -9,6 +9,7 @@ select
     listing_name,
     room_type,
     greatest(minimum_nights, 1) as minimum_nights,
+    host_id,
     price,
     'EUR' as currency,
     created_at,
