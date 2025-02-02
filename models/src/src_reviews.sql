@@ -2,11 +2,11 @@ with raw_reviews as (
     select *
     from {{ source('airbnb', 'reviews') }}
 )
+
 select 
-  listing_id,
-  id as review_id,
-  review_date,
-  reviewer_id,
-  reviewer_name,
-  comments as review_comments
+    listing_id,
+    `date` as review_date,
+    reviewer_name,
+    comments as review_comments,
+    sentiment as review_sentiment
 from raw_reviews

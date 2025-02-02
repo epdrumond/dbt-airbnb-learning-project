@@ -11,10 +11,10 @@ with src_reviews as (
 
 select
     listing_id,
-    review_id,
     review_date,
-    reviewer_id,
-    review_comments
+    reviewer_name,
+    review_comments,
+    review_sentiment
 from src_reviews
 where true
     and review_comments is not null

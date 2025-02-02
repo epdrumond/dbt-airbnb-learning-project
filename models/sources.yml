@@ -5,11 +5,14 @@ sources:
     schema: raw
     tables:
       - name: listings
-        identifier: raw_porto_listings
+        identifier: raw_listings
         
 
       - name: reviews
-        identifier: raw_porto_reviews
+        identifier: raw_reviews
+
+      - name: hosts
+        identifier: raw_hosts
 
             
           
