@@ -39,7 +39,7 @@ models:
   my_new_project:
     +materialized: view
     src:
-      +materialized: ephemeral
+      +materialized: view
     dim:
       +materialized: table
     fact:
