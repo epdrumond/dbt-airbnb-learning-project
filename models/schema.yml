@@ -3,6 +3,10 @@ version: 2
 models:
   - name: dim_listings_cleansed
     description: Cleansed table with Airnb listings data
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: source('airbnb', 'listings')
+        
     columns:
 
       - name: listing_id
@@ -42,6 +46,15 @@ models:
 
       - name: price
         description: The daily price of the stay
+        tests:
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              quantile: .95
+              min_value: 10 
+              max_value: 500
+          - dbt_expectations.expect_column_max_to_be_between:
+              max_value: 5000 
+              config:
+                severity: warn
 
       - name: currency
         description: Currency of the price field
