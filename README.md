@@ -7,3 +7,5 @@ This is an introductory project aimed at exploring some of DBT fundamental aspec
 - Defining built-in and `dbt_expectations` tests
 - Creating simple macros to work as tests
 - Using vars to improve incremental update strategy
+
+The source data used in this project can be found on https://dbtlearn.s3.amazonaws.com.
