@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    url: https://ee258fb8.us1a.app.preset.io/superset/dashboard/p/wzjA8JYpXDQ/
+    description: Executive dashboard on Airbnb listings
+
+    depends_on:
+      - ref('dim_listings_cleansed')
+      - ref('fact_reviews')
+    
+    owner:
+      name: Edilson Drumond
